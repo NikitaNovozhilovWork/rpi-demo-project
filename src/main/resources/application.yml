@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: RPI Demo
+  thymeleaf:
+    enabled: true
+    cache:   false
+    prefix:  classpath:/templates/
+    suffix:  .html
+
+management:
+  endpoints:
+    beans:
+      enabled: false
+    web:
+      base-path: /management
+      exposure:
+        include: '*'
