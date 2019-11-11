@@ -31,31 +31,31 @@ public class ActionService {
   }
 
   public void goForward() {
-    pin03.low();
+    pin02.low();
     pin04.low();
     pin01.high();
-    pin02.high();
+    pin03.high();
   }
 
   public void goBackward() {
     pin01.low();
-    pin02.low();
-    pin03.high();
+    pin03.low();
+    pin02.high();
     pin04.high();
   }
 
   public void turnLeft() {
     pin01.low();
-    pin03.low();
+    pin04.low();
     pin02.high();
-    pin04.high();
+    pin03.high();
   }
 
   public void turnRight() {
     pin02.low();
-    pin04.low();
+    pin03.low();
     pin01.high();
-    pin03.high();
+    pin04.high();
   }
 
   public void stop() {
