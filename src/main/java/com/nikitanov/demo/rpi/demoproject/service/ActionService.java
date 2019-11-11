@@ -16,13 +16,12 @@ public class ActionService {
   private final GpioPinDigitalOutput pin03;
   private final GpioPinDigitalOutput pin04;
 
-  //TODO: check pins!
   public ActionService() {
     final GpioController gpio = GpioFactory.getInstance();
-    pin01 = initializePin(RaspiPin.GPIO_01, "LeftEngineForward", gpio);
-    pin02 = initializePin(RaspiPin.GPIO_02, "LeftEngineBackward", gpio);
-    pin03 = initializePin(RaspiPin.GPIO_03, "RightEngineForward", gpio);
-    pin04 = initializePin(RaspiPin.GPIO_04, "RightEngineBackward", gpio);
+    pin01 = initializePin(RaspiPin.GPIO_06, "LeftEngineForward", gpio);
+    pin02 = initializePin(RaspiPin.GPIO_13, "LeftEngineBackward", gpio);
+    pin03 = initializePin(RaspiPin.GPIO_19, "RightEngineForward", gpio);
+    pin04 = initializePin(RaspiPin.GPIO_26, "RightEngineBackward", gpio);
   }
 
   private static GpioPinDigitalOutput initializePin(Pin raspiPin, String pinName, GpioController gpio) {

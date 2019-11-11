@@ -15,7 +15,7 @@ public class RestActionController {
   private ActionService actionService;
 
   @RequestMapping("/move")
-  public void move(@RequestParam("name") Direction direction) {
+  public void move(@RequestParam("direction") Direction direction) {
     switch (direction) {
       case FORWARD:
         actionService.goForward();
