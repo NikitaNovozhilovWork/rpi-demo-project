@@ -18,10 +18,10 @@ public class ActionService {
 
   public ActionService() {
     final GpioController gpio = GpioFactory.getInstance();
-    pin01 = initializePin(RaspiPin.GPIO_06, "LeftEngineForward", gpio);
-    pin02 = initializePin(RaspiPin.GPIO_13, "LeftEngineBackward", gpio);
-    pin03 = initializePin(RaspiPin.GPIO_19, "RightEngineForward", gpio);
-    pin04 = initializePin(RaspiPin.GPIO_26, "RightEngineBackward", gpio);
+    pin01 = initializePin(RaspiPin.GPIO_22, "LeftEngineForward", gpio);
+    pin02 = initializePin(RaspiPin.GPIO_23, "LeftEngineBackward", gpio);
+    pin03 = initializePin(RaspiPin.GPIO_24, "RightEngineForward", gpio);
+    pin04 = initializePin(RaspiPin.GPIO_25, "RightEngineBackward", gpio);
   }
 
   private static GpioPinDigitalOutput initializePin(Pin raspiPin, String pinName, GpioController gpio) {
