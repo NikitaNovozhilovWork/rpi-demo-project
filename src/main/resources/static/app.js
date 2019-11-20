@@ -25,14 +25,14 @@ function stop() {
     });
 }
 
-$(function () {
-    $( "#UpButton" ).click(function() { action("FORWARD"); });
-    $( "#RightButton" ).click(function() { action("RIGHT"); });
-    $( "#LeftButton" ).click(function() { action("LEFT"); });
-    $( "#DownButton" ).click(function() { action("BACKWARD"); });
+$(document).ready(function () {
+    $( "#UpButton" ).on("mousedown touchstart", function() { action("FORWARD"); });
+    $( "#RightButton" ).on("mousedown touchstart", function() { action("RIGHT"); });
+    $( "#LeftButton" ).on("mousedown touchstart", function() { action("LEFT"); });
+    $( "#DownButton" ).on("mousedown touchstart", function() { action("BACKWARD"); });
     $( "#StopButton" ).click(function() { stop(); });
-    $( "#UpButton" ).keyup(function() { stop(); });
-    $( "#RightButton" ).keyup(function() { stop(); });
-    $( "#LeftButton" ).keyup(function() { stop(); });
-    $( "#DownButton" ).keyup(function() { stop(); });
+    $( "#UpButton" ).on("mouseup touchend", function() { stop(); });
+    $( "#RightButton" ).on("mouseup touchend", function() { stop(); });
+    $( "#LeftButton" ).on("mouseup touchend", function() { stop(); });
+    $( "#DownButton" ).on("mouseup touchend", function() { stop(); });
 });
