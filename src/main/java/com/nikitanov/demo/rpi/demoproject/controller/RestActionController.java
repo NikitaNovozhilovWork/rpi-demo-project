@@ -2,6 +2,7 @@ package com.nikitanov.demo.rpi.demoproject.controller;
 
 import com.nikitanov.demo.rpi.demoproject.model.Direction;
 import com.nikitanov.demo.rpi.demoproject.service.ActionService;
+import com.nikitanov.demo.rpi.demoproject.service.impl.ActionServiceRpiImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
