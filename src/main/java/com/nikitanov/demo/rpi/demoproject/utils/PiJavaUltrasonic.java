@@ -55,7 +55,7 @@ public class PiJavaUltrasonic{
     while(pin_echo.isLow()){ //wait until echo get high
       busyWaitNanos(1); //wait 1ns
       rejection_start++;
-      if(rejection_start==REJECTION_START) {
+      if(rejection_start>=REJECTION_START) {
         log.warn("Start rejection");
         return -1;
       }; //infinity
@@ -65,7 +65,7 @@ public class PiJavaUltrasonic{
     while(pin_echo.isHigh()){ //wait until echo get low
       busyWaitNanos(1); //wait 1ns
       rejection_time++;
-      if(rejection_time==REJECTION_TIME) {
+      if(rejection_time>=REJECTION_TIME) {
         log.warn("Time rejection");
         return -1; //infinity
       }

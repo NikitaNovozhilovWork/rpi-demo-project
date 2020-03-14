@@ -14,15 +14,15 @@ import org.springframework.stereotype.Component;
 public class SensorStarter implements CommandLineRunner {
 
   @Value("${app.sensor.ultrasonic.delay_ms:1000}")
-  private static final int SENSOR_DELAY_MILLISECONDS = 1000;
+  private int SENSOR_DELAY_MILLISECONDS = 1000;
   @Value("${app.sensor.ultrasonic.trig_pin:3}")
-  private static final int ULTRA_SONIC_TRIG_PIN = 3; //GPIO 15
+  private int ULTRA_SONIC_TRIG_PIN = 3; //GPIO 15
   @Value("${app.sensor.ultrasonic.echo_pin:4}")
-  private static final int ULTRA_SONIC_ECHO_PIN = 4; //GPIO 16
+  private int ULTRA_SONIC_ECHO_PIN = 4; //GPIO 16
   @Value("${app.sensor.ultrasonic.rejection_start_ns:1000}")
-  private static final int ULTRA_SONIC_REJECTION_START_NS = 1000;
-  @Value("${app.sensor.ultrasonic.rejection_end_ns:30000}")
-  private static final int ULTRA_SONIC_REJECTION_END_NS = 30000;
+  private int ULTRA_SONIC_REJECTION_START_NS = 1000;
+  @Value("${app.sensor.ultrasonic.rejection_end_ns:2147483647}")
+  private int ULTRA_SONIC_REJECTION_END_NS = 2147483647;
 
   @Autowired
   private UltraSonicService ultraSonicService;
