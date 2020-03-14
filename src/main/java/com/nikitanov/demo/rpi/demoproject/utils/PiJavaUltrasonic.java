@@ -11,7 +11,9 @@ import com.pi4j.io.gpio.*;
 //pwm1 23,24 ; pwm0 1, 26
 import com.pi4j.wiringpi.Gpio;
 import com.pi4j.wiringpi.SoftPwm;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class PiJavaUltrasonic{
   //bcm, GPIO_#
   private int PIN_ECHO,PIN_TRIG;
@@ -39,6 +41,7 @@ public class PiJavaUltrasonic{
   }
 
   public int getDistance() { //in milimeters
+    log.info("get distance");
     int distance=0; long start_time, end_time,rejection_start=0,rejection_time=0;
     //Start ranging- trig should be in high state for 10us to generate ultrasonic signal
     //this will generate 8 cycle sonic burst.
@@ -52,14 +55,20 @@ public class PiJavaUltrasonic{
     while(pin_echo.isLow()){ //wait until echo get high
       busyWaitNanos(1); //wait 1ns
       rejection_start++;
-      if(rejection_start==REJECTION_START) return -1; //infinity
+      if(rejection_start==REJECTION_START) {
+        log.warn("Start rejection");
+        return -1;
+      }; //infinity
     }
     start_time=System.nanoTime();
 
     while(pin_echo.isHigh()){ //wait until echo get low
       busyWaitNanos(1); //wait 1ns
       rejection_time++;
-      if(rejection_time==REJECTION_TIME) return -1; //infinity
+      if(rejection_time==REJECTION_TIME) {
+        log.warn("Time rejection");
+        return -1; //infinity
+      }
     }
     end_time=System.nanoTime();
 

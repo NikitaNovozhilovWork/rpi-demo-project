@@ -7,6 +7,15 @@ spring:
     prefix:  classpath:/templates/
     suffix:  .html
 
+app:
+  sensor:
+    ultrasonic:
+      delay_ms: 1000
+      trig_pin: 3
+      echo_pin: 4
+      rejection_start_ns: 1000
+      rejection_end_ns: 30000
+
 management:
   endpoints:
     beans:
